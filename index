@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="theme-color" content="#0E2A33">
+<title>Eguraldia · Hondarribia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marea:#0E2A33;
+    --panel:#143942;
+    --panel-2:#0B2228;
+    --bruma:#EAF1F0;
+    --slate:#7C9AA0;
+    --slate-2:#557078;
+    --bidasoa:#4FB3B8;
+    --galerna:#E8A33D;
+    --line:#21474F;
+    --lluvia:#5BA3D0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--marea);
+    color:var(--bruma);
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    line-height:1.4;
+    padding:22px 16px 40px;
+    max-width:560px;margin:0 auto;
+    min-height:100vh;
+  }
+  .mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:26px}
+  .place{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--bidasoa);font-weight:500}
+  h1{font-size:30px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
+  .coords{font-size:11px;color:var(--slate);letter-spacing:.04em;margin-top:3px}
+  #refresh{
+    flex:none;background:var(--panel);border:1px solid var(--line);color:var(--bruma);
+    width:42px;height:42px;border-radius:11px;font-size:18px;cursor:pointer;
+    display:grid;place-items:center;transition:transform .5s ease, background .2s;
+  }
+  #refresh:hover{background:var(--panel-2)}
+  #refresh:focus-visible{outline:2px solid var(--bidasoa);outline-offset:2px}
+  #refresh.spin{transform:rotate(360deg)}
+
+  section{margin-bottom:26px}
+  .eyebrow{
+    display:flex;align-items:baseline;gap:8px;margin-bottom:12px;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:500;
+  }
+  .eyebrow .model{color:var(--galerna)}
+  .eyebrow .sub{margin-left:auto;font-size:10px;letter-spacing:.06em;color:var(--slate-2);text-transform:none}
+
+  .now{
+    background:var(--panel);border:1px solid var(--line);border-radius:18px;
+    padding:20px;display:flex;align-items:center;gap:14px;
+  }
+  .now-temp{flex:1;min-width:0}
+  .now-temp .big{font-size:60px;font-weight:500;line-height:.95;letter-spacing:-.02em}
+  .now-temp .big span{font-size:26px;color:var(--slate)}
+  .now-temp .feels{font-size:12px;color:var(--slate);margin-top:6px;letter-spacing:.02em}
+
+  .compass{flex:none;width:118px;height:118px;position:relative}
+  .compass svg{width:100%;height:100%;display:block}
+  .compass .rdir{
+    position:absolute;inset:0;display:flex;flex-direct
